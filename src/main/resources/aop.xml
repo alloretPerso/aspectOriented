@@ -9,14 +9,16 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
     <aop:aspectj-autoproxy/>
 
 
-    <bean id="passengerDao" class="com.learning.apectOriented.Learning.aspect.PassengerDaoImpl"/>
-    <bean id="loggingAspect" class="com.learning.apectOriented.Learning.aspect.LoggingAspect"/>
+    <bean id="passengerDao" class="com.learning.apectOriented.Learning.aspect1.PassengerDaoImpl"/>
+    <bean id="passengerDao4" class="com.learning.apectOriented.Learning.aspect4.PassengerDaoImpl"/>
+    <bean id="loggingAspect" class="com.learning.apectOriented.Learning.aspect1.LoggingAspect"/>
     <bean id="loggingAspect2" class="com.learning.apectOriented.Learning.aspect2.LoggingAspect"/>
     <bean id="loggingAspect3" class="com.learning.apectOriented.Learning.aspect3.LoggingAspect"/>
+    <bean id="loggingAspect4" class="com.learning.apectOriented.Learning.aspect4.LoggingAspect"/>
     <aop:config>
         <aop:aspect id="loggingAspect" ref="loggingAspect">
             <aop:pointcut id="passengerMethod"
-                          expression="execution(*  com.learning.apectOriented.Learning.aspect.*.*(..))"/>
+                          expression="execution(*  com.learning.apectOriented.Learning.aspect1..*.*(..))"/>
             <aop:before method="before" pointcut-ref="passengerMethod"/>
             <aop:after method="after" pointcut-ref="passengerMethod"/>
         </aop:aspect>

@@ -1,4 +1,4 @@
-package com.learning.apectOriented.Learning.aspect3;
+package com.learning.apectOriented.Learning.aspect4;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class LoggingAspect {
     private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
 
-    @Around("execution(* com.learning.apectOriented.Learning.aspect1..*.*Passenger(..))")
+    @Around("@annotation(com.learning.apectOriented.Learning.aspect4.Log)")
     public Object log(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String methodName = proceedingJoinPoint.getSignature().getName();
         Object[] methodsArgs = proceedingJoinPoint.getArgs();
