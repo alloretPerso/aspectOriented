@@ -12,6 +12,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
     <bean id="passengerDao" class="com.learning.apectOriented.Learning.aspect.PassengerDaoImpl"/>
     <bean id="loggingAspect" class="com.learning.apectOriented.Learning.aspect.LoggingAspect"/>
     <bean id="loggingAspect2" class="com.learning.apectOriented.Learning.aspect2.LoggingAspect"/>
+    <bean id="loggingAspect3" class="com.learning.apectOriented.Learning.aspect3.LoggingAspect"/>
     <aop:config>
         <aop:aspect id="loggingAspect" ref="loggingAspect">
             <aop:pointcut id="passengerMethod"
